@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <title>JC_demo</title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    #flycoins-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 400px;
+      height: 450px;
+      margin: -225px 0 0 -200px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <canvas id="flycoins-stage" width="800" height="900"></canvas>
+
+  <script type="text/javascript" src="https://jasonchen1982.github.io/jcc2d/build/jcc2d.js"></script>
+  <script type="text/javascript" src="../build/index.js"></script>
+  <script type="text/javascript">
+    var w = 800;
+    var h = 900;
+    var flyCoins = new JC.FlyCoins({
+      stage: {
+        dom: 'flycoins-stage',
+        interactive: false,
+        enableFPS: false,
+        width: w,
+        height: h,
+      },
+      coins: {
+        texture: './images/coin.png',
+      },
+      blinks: {
+        count: 8,
+        radius: 8,
+        range: 60,
+        color: '#FFD44F',
+      },
+      end: {
+        x: w >> 1,
+        y: h * 3 / 4,
+      }
+    });
+    flyCoins.start();
+    document.onclick = function() {
+      flyCoins.flying({
+        start: { x: JC.Utils.random(80, 720), y: JC.Utils.random(100, 400) },
+      });
+    }
+  </script>
+</body>
+</html>
