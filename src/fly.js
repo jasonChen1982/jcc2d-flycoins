@@ -136,6 +136,7 @@ FlyCoins.prototype._shipAndEmitBlinks = function(
     }
   }
   const emitBlinks = STORE.idelBlinks.splice(0, count);
+  // TODO: add update blink color and radius
 
   endBase = endBase || this.end;
   const duration = this.duration;
