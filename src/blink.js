@@ -1,5 +1,6 @@
 'use strict';
 
+import {JC} from './jc';
 import {CONFIG} from './config';
 
 /**

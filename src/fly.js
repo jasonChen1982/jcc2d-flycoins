@@ -3,6 +3,7 @@
 import {Coin} from './coin';
 import {Blink} from './blink';
 import {Utils} from './utils';
+import {JC} from './jc';
 
 const PMARK = 'cp';
 const OFFSETS = [

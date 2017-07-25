@@ -1,6 +1,7 @@
 'use strict';
 /* eslint no-bitwise: 0 */
 
+import {JC} from './jc';
 const FRONT = new JC.Point(0, 0, 10);
 import {CONFIG} from './config';
 

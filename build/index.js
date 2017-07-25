@@ -4,6 +4,10 @@
   (factory((global.JC = global.JC || {})));
 }(this, (function (exports) { 'use strict';
 
+var inModule = typeof require === 'function';
+var inBrowser = typeof window !== 'undefined';
+var JC = inModule && inBrowser ? require('jcc2d/build/jcc2d.light.js') : inBrowser ? window.JC : {};
+
 var CONFIG = {
   GLOBAL_WEIGHT: 0.25,
   MAX_SLOPE: 20,
@@ -333,6 +337,7 @@ FlyCoins.prototype._shipAndEmitBlinks = function (_ref3, endBase) {
     }
   }
   var emitBlinks = STORE.idelBlinks.splice(0, count);
+  // TODO: add update blink color and radius
 
   endBase = endBase || this.end;
   var duration = this.duration;
@@ -359,6 +364,7 @@ FlyCoins.prototype.stop = function () {
   this.stage.stopEngine();
 };
 
+exports.JC = JC;
 exports.CONFIG = CONFIG;
 exports.FlyCoins = FlyCoins;
 

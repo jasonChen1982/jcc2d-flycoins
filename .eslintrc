@@ -5,7 +5,8 @@
         "es6": true
     },
     "globals": {
-        "JC": true
+        "JC": true,
+        "require": true
     },
     "parserOptions": {
         "ecmaVersion": 6,
